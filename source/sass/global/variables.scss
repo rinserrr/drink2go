@@ -6,20 +6,19 @@
 /* Colors */
 :root {
   --color-base-white: #ffffff;
-  --color-base-gray: #444444;
-  --color-base-black: #000000;
+  --color-base-gray: #bdbdbd;
+  --color-base-black: #333333;
   --color-base-purple: #7859cf;
-  --color-base-green: #63d1bb;
 }
 
 
 /*  Default */
 /* ----------------------------------- */
 $color-base-white: #ffffff;
-$color-base-gray: #444444;
-$color-base-black: #000000;
+$color-base-gray: #bdbdbd;
+$color-base-black: #333333;
 $color-base-purple: #7859cf;
-$color-base-green: #63d1bb;
+$color-base-purple-light: #f0ebff;
 
 
 /* Project palette */
@@ -41,6 +40,7 @@ $ff-montserrat: "Montserrat", "Arial", sans-serif;
 $mobile-width: 320px;
 $mobile-width-only: 767px;
 $tablet-width: 768px;
-$desktop-width: 1024px;
+// $desktop-width: 1024px;
 $desktop-width-only: 1439px;
-$desktop-width-max: 1440px;
+// $desktop-width-max: 1440px;
+$desktop-width: 1440px;
