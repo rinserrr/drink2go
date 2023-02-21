@@ -1,0 +1,98 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.header__wrapper {
+  display: flex;
+}
+
+.header__logo-link {
+  margin-left: 20px;
+  min-height: 60px;
+  display: flex;
+  position: absolute;
+  padding-top: 12px;
+  text-decoration: none;
+  color: $color-base-black;
+  box-sizing: border-box;
+
+  @media (min-width: $tablet-width) {
+    margin-left: 0;
+    padding-top: 22px;
+    position: static;
+    margin-right: 54px;
+    height: 80px;
+    width: 120px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 0;
+    height: 80px;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  @media (min-width: $desktop-width-only) {
+    width: 316px;
+    margin-right: 142px;
+  }
+
+  @include link-state;
+  @include focus-state;
+}
+
+.header__image {
+  width: 32px;
+  height: 36px;
+
+  @media (min-width: $tablet-width) {
+    width: 82px;
+    height: 36px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 170px;
+    height: 36px;
+  }
+}
+
+.header__title {
+  margin: 0;
+  display: none;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 16px;
+
+  @media (min-width: $desktop-width-only) {
+    margin-left: 20px;
+    display: block;
+    width: 126px;
+    height: 33px;
+  }
+}
+
+.header__menu {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  min-height: 60px;
+
+  @media (min-width: $tablet-width) {
+    min-height: 80px;
+    justify-content: space-between;
+  }
+}
+
+.header__site-navigation {
+  width: 100%;
+  order: 2;
+
+  @media (min-width: $tablet-width) {
+    order: 0;
+    width: 399px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 559px;
+  }
+}

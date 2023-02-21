@@ -16,8 +16,29 @@
 
   &:focus-visible {
     outline: 2px solid variables.$color-base-purple;
-    outline-offset: 2px;
+    outline-offset: -2px;
     border-radius: 2px;
     z-index: 50;
+  }
+}
+
+
+// Link State
+@mixin link-state {
+  // outline: none;
+  cursor: pointer;
+
+  &:visited {
+    color: variables.$color-base-black;
+  }
+
+  &:hover,
+  &:focus {
+    color: variables.$color-base-purple;
+  }
+
+  &:active {
+    color: variables.$color-base-purple;
+    background-color: variables.$color-base-purple-light;
   }
 }

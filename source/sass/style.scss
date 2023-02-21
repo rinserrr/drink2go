@@ -2,7 +2,14 @@
 /* ----------------------------------- */
 @use "./global/base.scss";
 @use "./global/bootstrap.scss";
+@use "./global/container.scss";
+
+
+/* COMPONENTS */
+/* ----------------------------------- */
 
 
 /* BLOCKS */
 /* ----------------------------------- */
+@use "./blocks/header.scss";
+@use "./blocks/menu.scss";
