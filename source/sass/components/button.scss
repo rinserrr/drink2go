@@ -1,0 +1,55 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.button {
+  padding: 0;
+  width: 113px;
+  min-height: 40px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+
+  font-family: inherit;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-base-white;
+  background-color: $color-base-purple;
+
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+
+
+  &:hover {
+    background-color:$color-alt-primary-lighter;
+  }
+
+  &:active {
+    background-color: $color-alt-primary-darker;
+  }
+
+  &:disabled {
+    background-color: $color-base-gray;
+  }
+
+  /* Hide focus styles if they're not needed, for example,
+  when an element receives focus via the mouse. */
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  /* Show focus styles on keyboard focus. */
+  &:focus-visible {
+    outline: 2px solid $color-alt-primary-darker;
+    outline-offset: -2px;
+    z-index: 50;
+  }
+}

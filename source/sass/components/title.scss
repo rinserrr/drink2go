@@ -1,0 +1,50 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.title {
+  margin: 0;
+  font-style: normal;
+  color: $color-base-black;
+
+  &--color {
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: $color-base-purple;
+  }
+
+  &--big {
+    font-weight: 700;
+    font-size: 36px;
+    line-height: 48px;
+    letter-spacing: 0.02em;
+  }
+
+  &--h2 {
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  &--h3 {
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 32px;
+  }
+
+  &--oldprice {
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 32px;
+    text-decoration-line: line-through;
+    color: $color-base-purple;
+  }
+
+  &--newprice {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 32px;
+  }
+}
