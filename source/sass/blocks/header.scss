@@ -1,6 +1,16 @@
 @use "../global/bootstrap.scss" as *;
 
 
+/*
+min-width — от указанного значения и выше, включая значение.
+max-width — от указанного значения и ниже, включая значение.
+*/
+.header .container {
+  @media (max-width: $mobile-width-only) {
+    padding: 0;
+  }
+}
+
 .header__wrapper {
   display: flex;
 }
