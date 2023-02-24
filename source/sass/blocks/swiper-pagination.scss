@@ -1,0 +1,28 @@
+@use "../global/bootstrap.scss" as *;
+
+
+/* пагинация */
+.swiper-pagination-bullet {
+  width: 62px;
+  height: 4px;
+  border-radius: 0;
+  color: $color-base-white;
+  background-color: $color-base-white;
+  opacity: 1;
+
+  @include focus-state;
+}
+
+.swiper-pagination-bullet-active {
+  background-color: $color-base-purple;
+}
+
+.swiper-pagination {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    position: absolute;
+    margin-bottom: 56px;
+  }
+}

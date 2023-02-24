@@ -1,0 +1,163 @@
+@use "../global/bootstrap.scss" as *;
+
+
+/* кнопки/стрелки слайдера */
+.swiper-prev-svg,
+.swiper-next-svg {
+  color: $color-base-purple;
+}
+
+/* фон слайдеров */
+.slider1 {
+  background-color: #f3ebe1;
+}
+
+.slider2 {
+  background-color: #eae6fc;
+}
+
+.slider3 {
+  background-color: #e5e6e8;
+}
+
+/* левая кнопка */
+.promo__arrow-prev {
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  top: 22px;
+  left: 0;
+  z-index: 1;
+  color: transparent;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    left: 6px;
+  }
+
+  @media (min-width: $desktop-width-more) {
+    margin-left: max(80px, calc((100vw - 1440px) / 2));
+    left: 4px;
+  }
+
+  &::after {
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+  }
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: linear-gradient(270deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(270deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    background-color: linear-gradient(270deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:active .swiper-prev-svg {
+    color: $color-base-black;
+  }
+
+  &:disabled {
+    background: #f8f8f8;
+  }
+
+  &:disabled .swiper-prev-svg {
+    color: $color-base-gray;
+  }
+
+  @include focus-state;
+}
+
+.swiper-prev-svg {
+  position: relative;
+  top: 1px;
+  left: -2px;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    top: -98px;
+    left: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 0;
+  }
+}
+
+/* правая кнопка */
+.promo__arrow-next {
+  width: 20px;
+  height: 100%;
+  position: absolute;
+  top: 22px;
+  right: 0;
+  z-index: 1;
+  color: transparent;
+  border: none;
+  background-color: transparent;
+  overflow: hidden;
+
+  @media (min-width: $tablet-width) {
+    width: 40px;
+    right: 6px;
+  }
+
+  @media (min-width: $desktop-width-more) {
+    margin-right: max(80px, calc((100vw - 1440px) / 2));
+    right: 4px;
+  }
+
+  &::after {
+    overflow: hidden;
+    position: absolute;
+    z-index: -2;
+  }
+
+  &:hover,
+  &:focus {
+    background: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+    background-color: linear-gradient(90deg, #ffffff 0%, rgba(255, 255, 255, 0) 100%);
+  }
+
+  &:active {
+    background: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+    background-color: linear-gradient(90deg, rgba(120, 89, 207, 0.25) 0%, rgba(120, 89, 207, 0) 100%);
+  }
+
+  &:active .swiper-next-svg {
+    color: $color-base-black;
+  }
+
+  &:disabled {
+    background: #f8f8f8;
+  }
+
+  &:disabled .swiper-prev-svg {
+    color: $color-base-gray;
+  }
+
+  @include focus-state;
+}
+
+.swiper-next-svg {
+  position: relative;
+  top: 1px;
+  right: -2px;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    top: -98px;
+    right: 14px;
+  }
+
+  @media (min-width: $desktop-width) {
+    top: 0;
+  }
+}
