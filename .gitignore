@@ -36,5 +36,3 @@ layout/
 
 source/css/*.css
 source/css/*.map
-
-*.min.*
