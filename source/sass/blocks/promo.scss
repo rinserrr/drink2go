@@ -1,130 +1,151 @@
 @use "../global/bootstrap.scss" as *;
 
+
 .promo {
   width: 100%;
   min-height: 656px;
   position: relative;
 }
 
+.promo__swiper {
+  position: relative;
+}
+
+/*
+min-width — от указанного значения и выше, включая значение.
+max-width — от указанного значения и ниже, включая значение.
+*/
+.promo .container {
+  @media (max-width: $mobile-width-only) {
+    padding: 0;
+  }
+}
+
+.swiper-wrapper {
+  @media (min-width: $desktop-width) {
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+  }
+}
+
 .swiper-slide {
+  padding-top: 20px;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding-top: 20px;
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 30px;
+    padding-bottom: 75px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+  }
+}
+
+.slider-img-wrapper {
+  position: relative;
+
+  @media (min-width: $tablet-width) {
+    order: 2;
+  }
+
+  @media (min-width: $desktop-width) {
+    order: 0;
+  }
 }
 
 .slider-img {
   margin-bottom: 10px;
+
+  @media (min-width: $desktop-width) {
+    padding-left: 8px;
+    margin-bottom: 8px;
+    width: 610px;
+  }
 }
 
 .swiper-buy-tagline {
+  margin-bottom: 4px;
   text-align: center;
-  margin-bottom: 5px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 40px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: start;
+    margin-top: 150px;
+  }
 }
 
 .swiper-buy-title {
-  text-align: center;
   margin-bottom: 10px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 16px;
+    font-weight: 700;
+    font-size: 56px;
+    line-height: 80px;
+    letter-spacing: 0.02em;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: start;
+  }
 }
 
 .swiper-buy-text {
   margin: 0 auto;
-  text-align: center;
+  margin-bottom: 20px;
   width: 280px;
   min-height: 100px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;
-  margin-bottom: 20px;
+  text-align: center;
+
+  @media (min-width: $tablet-width) {
+    width: 608px;
+    min-height: 96px;
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+  }
+
+  @media (min-width: $desktop-width) {
+    text-align: start;
+    margin-bottom: 41px;
+  }
 }
 
 .swiper-price-wrapper {
+  width: 230px;
+  margin: 0 auto;
   display: flex;
-  padding-left: 45px;
-  margin-right: 45px;
+  align-items: baseline;
   margin-bottom: 60px;
-}
 
-.title--oldprice {
-  padding-top: 4px;
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin: 0;
+  }
 }
 
 .title--newprice {
-  padding-top: 4px;
   margin-left: 6px;
 }
 
-
 .button--promo {
   margin-left: auto;
+
+  @include focus-state;
 }
-
-/* стрелки слайдера */
-.promo__arrow-prev {
-  width: 11px;
-  height: 20px;
-  position: absolute;
-  top: 340px;
-  left: 4px;
-  z-index: 1;
-  color: transparent;
-  border: none;
-  background-color: transparent;
-
-    background: {
-      image: url("../../img/control/icon-arrow-left.svg");
-      repeat: no-repeat;
-      size: 100% auto;
-      position: center;
-    }
-}
-
-.promo__arrow-next {
-  width: 11px;
-  height: 20px;
-  position: absolute;
-  top: 340px;
-  right: 4px;
-  z-index: 1;
-  color: transparent;
-  border: none;
-  background-color: transparent;
-
-    background: {
-      image: url("../../img/control/icon-arrow-right.svg");
-      repeat: no-repeat;
-      size: 100% auto;
-      position: center;
-    }
-}
-
-
-.slider1 {
-  background-color: #f3ebe1;
-}
-
-.slider2 {
-  background-color: #eae6fc;
-}
-
-.slider3 {
-  background-color: #e5e6e8;
-}
-
-
-/* пагинация */
-.swiper-pagination-bullet {
-  width: 62px;
-  height: 4px;
-  border-radius: 0;
-  background-color: $color-base-white;
-}
-
-.swiper-pagination-bullet-active {
-  background-color: $color-base-purple;
-}
-
-// .swiper-pagination {
-//   display: none;
-// }
