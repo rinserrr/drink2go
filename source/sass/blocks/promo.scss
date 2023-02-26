@@ -62,6 +62,10 @@ max-width — от указанного значения и ниже, включ
 .slider-img {
   margin-bottom: 10px;
 
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
+
   @media (min-width: $desktop-width) {
     padding-left: 8px;
     margin-bottom: 8px;

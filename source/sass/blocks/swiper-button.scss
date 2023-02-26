@@ -35,12 +35,11 @@
 
   @media (min-width: $tablet-width) {
     width: 40px;
-    left: 6px;
   }
 
   @media (min-width: $desktop-width-more) {
     margin-left: max(80px, calc((100vw - 1440px) / 2));
-    left: 4px;
+    left: -6px;
   }
 
   &::after {
@@ -106,12 +105,11 @@
 
   @media (min-width: $tablet-width) {
     width: 40px;
-    right: 6px;
   }
 
   @media (min-width: $desktop-width-more) {
     margin-right: max(80px, calc((100vw - 1440px) / 2));
-    right: 4px;
+    right: -6px;
   }
 
   &::after {
