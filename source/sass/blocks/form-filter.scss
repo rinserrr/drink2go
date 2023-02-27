@@ -1,0 +1,338 @@
+@use "../global/bootstrap.scss" as *;
+
+
+/* размеры фильтра */
+.form-filter {
+  width: 318px;
+  min-height: 714px;
+}
+
+/* fieldset */
+.form-filter__group {
+  margin: 0;
+  padding: 0;
+  border: none;
+}
+
+/* title */
+.form-filter__field-title {
+  padding-bottom: 20px;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+
+/* range */
+.form-filter__range {
+  padding-bottom: 20px;
+  position: relative;
+}
+
+/* серая линия */
+.form-filter__range-line {
+  height: 2px;
+  width: 318px;
+  position: absolute;
+  background-color: $color-alt-light-grey;
+}
+
+/* пурпурная линиия */
+.form-filter__range-line-fill {
+  margin-bottom: 20px;
+  width: 90%;
+  height: 2px;
+  display: block;
+  background-color: $color-base-purple;
+  transition: width 500ms ease-in-out;
+}
+
+/* кнопки минимума / максимума */
+.form-filter__range-button {
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  content: "";
+  border-radius: 50%;
+  background-color: $color-base-white;
+  border: 2px solid $color-base-purple;
+  cursor: pointer;
+
+  &:hover::before {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: rgba(120, 89, 207, 0.25);
+    border: 2px solid $color-base-white;
+    cursor: pointer;
+  }
+
+  &:active::before {
+    width: 20px;
+    height: 20px;
+    position: absolute;
+    content: "";
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    background-color: $color-base-purple;
+    border: 2px solid $color-base-white;
+    cursor: pointer;
+  }
+
+  &:disabled::before {
+    background-color: $color-base-white;
+    border: 2px solid $color-alt-light-grey;
+  }
+
+  @include focus-state;
+}
+
+.form-filter__range-min {
+  top: -12px;
+  left: -0;
+}
+
+.form-filter__range-max {
+  top: -12px;
+  right: 24px;
+}
+
+/* input range */
+.form-filter__range-input {
+  width: 134px;
+  padding: 7px 10px;
+  font-family: $ff-montserrat;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 24px;
+
+  color: $color-base-gray;
+  border: 2px solid $color-base-purple;
+  border-radius: 4px;
+  background-color: $color-base-white;
+  text-align: center;
+
+  &:hover {
+    color: $color-base-black;
+  }
+
+  &:focus {
+    color: $color-base-black;
+    outline: 2px solid $color-alt-primary-darker;
+    outline-offset: -2px;
+  }
+
+  &:active {
+    color: $color-base-black;
+  }
+
+  &:disabled {
+    color: $color-base-gray;
+    background-color: $color-base-gray;
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-alt-primary-darker;
+    outline-offset: -2px;
+    z-index: 50;
+  }
+}
+
+/* убираем стрелки в инпутах */
+.form-filter__range-input::-webkit-outer-spin-button,
+.form-filter__range-input::-webkit-inner-spin-button {
+  appearance: none;
+  margin: 0;
+}
+
+
+/* radio button */
+.form-filter__list {
+  @include list-reset;
+}
+
+.form-filter__item {
+  padding-bottom: 20px;
+}
+
+.form-filter__milk {
+  padding-left: 30px;
+  position: relative;
+  cursor: pointer;
+
+  @include focus-state;
+}
+
+/* не активные radio */
+.form-filter__milk::before {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  border-radius: 50%;
+  border: 2px solid $color-base-gray;
+}
+
+/* заливка кнопки в default checked */
+.form-filter__milk::after {
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background-color: $color-base-purple;
+  left: 4px;
+  top: 4px;
+}
+
+/* заливка не нажатой кнопки при фокусе и ховере */
+.form-filter__milk:hover.form-filter__milk::after,
+.form-filter__milk:focus.form-filter__milk::after {
+  content: "";
+  background-color: rgba(120, 89, 207, 0.25);
+}
+
+/* бордер при фокусе и ховере не нажатой кнопки */
+.form-filter__milk:hover.form-filter__milk::before,
+.form-filter__milk:focus.form-filter__milk::before {
+  border: 2px solid $color-base-purple;
+}
+
+/* заливка когда нажали но не отпустили */
+.form-filter__milk-radio:active + .form-filter__milk::after {
+  content: "";
+  background-color: $color-alt-primary-darker;
+}
+
+/* заливка при checked */
+.form-filter__milk-radio:checked + .form-filter__milk::after {
+  content: "";
+  background-color: $color-base-purple;
+}
+
+/* бордер при чекеде */
+.form-filter__milk-radio:checked + .form-filter__milk::before {
+  border: 2px solid $color-base-purple;
+}
+
+/* заливка при дизейбл */
+.form-filter__milk-radio:disabled + .form-filter__milk::after {
+  background-color: transparent;
+}
+
+/* бордер при дизейбл */
+.form-filter__milk-radio:disabled + .form-filter__milk::before {
+  border: 2px solid $color-alt-light-grey;
+}
+
+/* текст при дизейбл */
+.form-filter__milk-radio:disabled + .form-filter__milk {
+  color: $color-base-gray;
+  cursor: auto;
+}
+
+/* заливка при нажатом дизейбл */
+.form-filter__milk-radio:checked:disabled + .form-filter__milk::after {
+  content: "";
+  background-color: $color-base-gray;
+}
+
+/* бордер при нажатом дизейбл */
+.form-filter__milk-radio:checked:disabled + .form-filter__milk::before {
+  border: 2px solid  $color-alt-light-grey;
+}
+
+
+/* checkbox button */
+.form-filter__country {
+  padding-left: 50px;
+  position: relative;
+  cursor: pointer;
+
+  @include focus-state;
+}
+
+/* фон не нажатых чекбоксов */
+.form-filter__country::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 42px;
+  height: 24px;
+  border-radius: 12px;
+  background: $color-base-gray;
+}
+
+/* фон самого переключателя-кругляш */
+.form-filter__country::after {
+  content: "";
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: $color-base-white;
+  transition: left 0.5s ease-in-out, background 0.5s ease;
+}
+
+/* ховер и фокус не нажатых чекедов */
+.form-filter__country:hover.form-filter__country::before,
+.form-filter__country:focus.form-filter__country::before {
+  border: 2px solid $color-alt-primary-lighter;
+  background: rgba(120, 89, 207, 0.25);
+}
+
+/* фон нажатаго чекеда */
+.form-filter__country-checkbox:checked + .form-filter__country::before {
+  background: $color-base-purple;
+  border: none;
+}
+
+/* смещение переключателя при нажатии */
+.form-filter__country-checkbox:checked + .form-filter__country::after {
+  left: 20px;
+}
+
+/* текст дисейбл чекеда */
+.form-filter__country-checkbox:disabled + .form-filter__country {
+  color: $color-base-gray;
+  cursor: auto;
+}
+
+/* фон дисейбл чекеда */
+.form-filter__country-checkbox:disabled + .form-filter__country::before {
+  background-color: $color-alt-light-grey;
+  border: none;
+}
+
+
+/* form button */
+.button--form-apply {
+  width: 160px;
+  min-height: 45px;
+  font-size: 13px;
+  line-height: 24px;
+}
+
+.button--form-reset {
+  width: 160px;
+  min-height: 45px;
+  font-size: 13px;
+  line-height: 24px;
+  color: $color-base-purple;
+  background-color: $color-base-white;
+}
