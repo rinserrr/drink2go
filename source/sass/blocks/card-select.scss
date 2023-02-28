@@ -1,0 +1,158 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.card-select {
+  display: flex;
+  align-items: baseline;
+
+  margin-bottom: 800px;
+}
+
+.card-select__title {
+  margin: 0;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+}
+
+.card-select__wrapper {
+  width: 165px;
+  height: 32px;
+}
+
+/* сам select */
+.card-select__navigation {
+  padding: 4px 30px 4px 10px;
+  width: 165px;
+  height: 32px;
+  display: block;
+  position: relative;
+  border: none;
+  border-radius: 4px 4px 0px 0px;
+  background-color: transparent;
+
+  &:hover {
+    background-color: $color-base-purple-light;
+  }
+
+  &:focus {
+    background-color: transparent;
+  }
+
+  &:focus .card-select__description::after {
+    transition: 0.3s ease;
+    transform: rotate(180deg);
+  }
+
+  &:active {
+    background-color: transparent;
+  }
+
+  &:active .card-select__description::after {
+    transition: 0.3s ease;
+    transform: rotate(180deg);
+  }
+
+  &:focus:not(:focus-visible) {
+    box-shadow: none;
+    outline: 0;
+  }
+
+  &:focus-visible {
+    outline: 2px solid $color-alt-primary-darker;
+    outline-offset: -2px;
+    z-index: 50;
+  }
+}
+
+/* текст selecta по умолчанию */
+.card-select__description {
+  font-family: $ff-montserrat;
+  font-style: normal;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-base-purple;
+  border: none;
+  text-decoration: none;
+  text-transform: lowercase;
+  position: relative;
+}
+
+/* реализация стрелки */
+.card-select__description::after {
+  width: 10px;
+  height: 6px;
+  position: absolute;
+  content: "";
+  top: 6px;
+  right: -20px;
+  background-image: url("../../img/control/icon-arrow-down.svg");
+  background-repeat: no-repeat;
+}
+
+/* меню selecta */
+.card-select__menu {
+  display: none;
+  flex-direction: row;
+  position: relative;
+  z-index: 3;
+  cursor: pointer;
+}
+
+.card-select__menulist {
+  @include list-reset;
+}
+
+
+.card-select__link {
+  margin: 0;
+  padding-left: 20px;
+  width: 190px;
+  height: 40px;
+  display: inline-flex;
+  align-items: center;
+
+  font-family: $ff-montserrat;
+  font-style: normal;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 24px;
+  color: $color-base-black;
+
+  border: none;
+  border-radius: 4px 4px 0px 0px;
+  text-decoration: none;
+  text-transform: lowercase;
+  position: relative;
+  left: -25px;
+
+  &:focus,
+  &:hover {
+    background-color: $color-base-purple-light;
+  }
+
+  &:active {
+    color: $color-base-white;
+    background-color: $color-base-purple;
+  }
+
+  @include focus-state;
+}
+
+/* текущий select */
+.card-select__link--current {
+  color: $color-base-white;
+  background-color: $color-base-purple;
+}
+
+
+/* активируем подменю при нажатии */
+.card-select__wrapper:active .card-select__menu {
+  display: flex;
+}
+
+.card-select__wrapper:focus-within .card-select__menu {
+  display: flex;
+}

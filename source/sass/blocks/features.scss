@@ -63,18 +63,6 @@
   padding-top: 66px;
   background-position: 50% 0;
 
-  @media (min-width: $tablet-width) {
-    margin-bottom: 0;
-    padding-top: 0;
-    background-position: 0 0;
-  }
-
-  @media (min-width: $desktop-width) {
-    margin-bottom: 0;
-    padding-top: 66px;
-    background-position: 50% 0;
-  }
-
   &--speed {
     background-image: url("../../img/features/icon-speed.svg");
     background-repeat: no-repeat;
@@ -93,6 +81,34 @@
   &--ecology {
     background-image: url("../../img/features/icon-ecology.svg");
     background-repeat: no-repeat;
+  }
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+    padding-top: 0;
+    background-position: 0 0;
+
+
+    &--speed {
+      grid-column-start: 2;
+      grid-column-end: 3;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
+
+    &--ecology {
+      grid-column-start: 1;
+      grid-column-end: 2;
+      grid-row-start: 1;
+      grid-row-end: 2;
+      background-position-y: 2px;
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+    padding-top: 66px;
+    background-position: 50% 0;
   }
 }
 
