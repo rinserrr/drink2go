@@ -368,7 +368,7 @@
       <p class="catalog__description title title--h2">Каталог кофейных напитков</p>
 
       <section class="catalog__form-filter form-filter">
-        <h3 class="form-filter__title visually-hidden">Список товаров с фильтрами</h3>
+        <h3 class="visually-hidden">Список товаров с фильтрами</h3>
 
         <form
           class="form-filter"
@@ -498,28 +498,30 @@
       </section>
 
 
-      <section class="catalog__list">
-        <h3 class="catalog__list-title">Список товаров</h3>
+      <section class="catalog__card-select card-select">
+        <h3 class="card-select__title">Сортировка:</h3>
 
-        <div class="catalog__card-select card-select">
-          <div class="card-select__wrapper">
-            <button class="card-select__navigation" type="button">
-              <span class="card-select__description">По умолчанию</span>
-              <span class="card-select__focus"></span>
-            </button>
+        <div class="card-select__wrapper">
+          <button class="card-select__navigation" type="button">
+            <span class="card-select__description">По умолчанию</span>
+            <span class="card-select__focus"></span>
+          </button>
 
-            <div class="card-select__menu">
-              <ul class="card-select__menulist">
-                <li><a class="card-select__link" href="#">По умолчанию</a></li>
-                <li><a class="card-select__link" href="#">Дешевле</a></li>
-                <li><a class="card-select__link" href="#">Дороже</a></li>
-                <li><a class="card-select__link" href="#">По дате</a></li>
-              </ul>
-            </div>
+          <div class="card-select__menu">
+            <ul class="card-select__menulist">
+              <li><a class="card-select__link card-select__link--current" href="#">По умолчанию</a></li>
+              <li><a class="card-select__link" href="#">сначала дорогие</a></li>
+              <li><a class="card-select__link" href="#">сначала дешёвые</a></li>
+              <li><a class="card-select__link" href="#">высокий рейтинг</a></li>
+            </ul>
           </div>
         </div>
+      </section>
 
-        <ul class="catalog__card-list  card-list">
+      <section class="catalog__list">
+        <h3 class="visually-hidden">Список карточек товаров</h3>
+
+        <ul class="catalog__card-list card-list">
           <li class="card-list__item">
 
             <a class="card-list__link" href="#">
@@ -745,7 +747,7 @@
       </section>
 
       <article class="catalog__pagination pagination">
-        <h2 class="visually-hidden">Страницы товара</h2>
+        <h3 class="visually-hidden">Страницы товара</h3>
 
         <a class="pagination__button pagination__button--prev" href="#">
           Назад
