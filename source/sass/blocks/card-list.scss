@@ -1,12 +1,30 @@
 @use "../global/bootstrap.scss" as *;
 
 
-.catalog__card-list {
+.card-list {
   @include list-reset;
 
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 317px));
   gap: 30px;
+}
+
+.card-list__item {
+  padding: 50px 30px 30px;
+  background-color: $color-base-white;
+}
+
+.card-list__item:nth-child(2) {
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+}
+
+.card-list__link {
+  margin: 0 auto 30px;
+  width: 130px;
+  height: 188px;
+  display: block;
+
+  @include focus-state;
 }
 
 .card-list__description,
@@ -15,13 +33,32 @@
   margin: 0;
 }
 
+.card-list__description {
+  margin-bottom: 10px;
+}
+
+.card-list__text {
+  margin-bottom: 19px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+}
+
 .card-list__buy {
   display: flex;
   justify-content: space-between;
   align-items: center;
 }
 
-.card-list__image {
-  width: 130px;
-  height: 188px;
+.card-list__button {
+  width: 141px;
+  min-height: 36px;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  box-sizing: border-box;
+}
+
+.card-list__button-description {
+  margin-left: 6px;
 }

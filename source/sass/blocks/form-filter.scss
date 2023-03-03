@@ -16,8 +16,9 @@
 
 /* title */
 .form-filter__field-title {
+  margin: 0;
   padding: 0;
-  padding-bottom: 20px;
+  margin-bottom: 20px;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
@@ -26,7 +27,8 @@
 
 /* range */
 .form-filter__range {
-  padding-bottom: 20px;
+  padding-top: 10px;
+  margin-bottom: 34px;
   position: relative;
 }
 
@@ -95,13 +97,13 @@
 }
 
 .form-filter__range-min {
-  top: -12px;
+  top: -11px;
   left: -0;
 }
 
 .form-filter__range-max {
-  top: -12px;
-  right: 24px;
+  top: -11px;
+  right: 20px;
 }
 
 /* input range */
@@ -157,6 +159,24 @@
   margin: 0;
 }
 
+/* разделитель инпутов */
+.form-filter__image {
+  margin-left: 15px;
+  margin-right: 16px;
+  color: $color-base-gray;
+  position: relative;
+  top: -4px;
+}
+
+
+.form-filter__range-wrapper {
+  margin-bottom: 30px;
+}
+
+
+.form-filter__group--milk {
+  margin-bottom: 10px;
+}
 
 /* radio button */
 .form-filter__list {
@@ -168,7 +188,7 @@
 }
 
 .form-filter__milk {
-  padding-left: 30px;
+  padding-left: 34px;
   position: relative;
   cursor: pointer;
 
@@ -181,7 +201,7 @@
   height: 24px;
   position: absolute;
   content: "";
-  top: 0;
+  top: -1px;
   left: 0;
   border-radius: 50%;
   border: 2px solid $color-base-gray;
@@ -195,7 +215,7 @@
   border-radius: 50%;
   background-color: $color-base-purple;
   left: 4px;
-  top: 4px;
+  top: 3px;
 }
 
 /* заливка не нажатой кнопки при фокусе и ховере */
@@ -256,9 +276,13 @@
 }
 
 
+.form-filter__group--country {
+  margin-bottom: 19px;
+}
+
 /* checkbox button */
 .form-filter__country {
-  padding-left: 50px;
+  padding-left: 51px;
   position: relative;
   cursor: pointer;
 
@@ -269,7 +293,7 @@
 .form-filter__country::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 0;
   width: 42px;
   height: 24px;
@@ -281,7 +305,7 @@
 .form-filter__country::after {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 0;
   left: 2px;
   width: 20px;
   height: 20px;
@@ -322,18 +346,31 @@
 
 
 /* form button */
+.form-filter__button-wrapper {
+  display: flex;
+  justify-content: space-between;
+}
+
 .button--form-apply {
-  width: 160px;
-  min-height: 45px;
-  font-size: 13px;
+  width: 150px;
+  min-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 24px;
+  box-sizing: border-box;
 }
 
 .button--form-reset {
-  width: 160px;
-  min-height: 45px;
-  font-size: 13px;
+  width: 150px;
+  min-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 24px;
+  box-sizing: border-box;
   color: $color-base-purple;
   background-color: $color-base-white;
+
+  &:active {
+    color: var(--color-base-white);
+  }
 }

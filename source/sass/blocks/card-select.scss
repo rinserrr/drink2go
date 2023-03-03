@@ -8,6 +8,7 @@
 
 .card-select__title {
   margin: 0;
+  margin-right: 12px;
   font-style: normal;
   font-weight: 600;
   font-size: 16px;
@@ -21,13 +22,13 @@
 
 /* сам select */
 .card-select__navigation {
-  padding: 4px 30px 4px 10px;
+  padding: 0 30px 4px 10px;
   width: 165px;
   height: 32px;
   display: block;
   position: relative;
   border: none;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0 0;
   background-color: transparent;
 
   &:hover {
@@ -117,9 +118,10 @@
   font-size: 16px;
   line-height: 24px;
   color: $color-base-black;
+  background-color: $color-base-white;
 
   border: none;
-  border-radius: 4px 4px 0px 0px;
+  border-radius: 4px 4px 0 0;
   text-decoration: none;
   text-transform: lowercase;
   position: relative;
