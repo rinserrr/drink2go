@@ -1,2 +1,27 @@
 @use "../global/bootstrap.scss" as *;
 
+
+.catalog__card-list {
+  @include list-reset;
+
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 317px));
+  gap: 30px;
+}
+
+.card-list__description,
+.card-list__text,
+.card-list__price {
+  margin: 0;
+}
+
+.card-list__buy {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-list__image {
+  width: 130px;
+  height: 188px;
+}

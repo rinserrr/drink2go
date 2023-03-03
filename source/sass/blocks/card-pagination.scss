@@ -1,0 +1,12 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.card-pagination {
+  display: flex;
+}
+
+.card-pagination__list {
+  @include list-reset;
+
+  display: flex;
+}

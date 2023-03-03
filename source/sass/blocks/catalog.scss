@@ -1,0 +1,55 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.catalog {
+  display: grid;
+
+  @media (min-width: $desktop-width) {
+    // grid-template-columns: 318px 1011px;
+    grid-template-columns: 318px 1fr;
+    column-gap: 30px;
+    grid-template-areas:
+      "catalog__title catalog__title"
+      "catalog__description catalog__description"
+      "catalog__form-filter catalog__card-select"
+      "catalog__form-filter catalog__list"
+      "catalog__form-filter catalog__pagination";
+  }
+}
+
+.catalog__title {
+  margin: 0 auto;
+  margin-bottom: 4px;
+  padding-top: 123px;
+  grid-area: catalog__title;
+}
+
+.catalog__description {
+  margin: 0 auto;
+  grid-area: catalog__description;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 42px;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 64px;
+  }
+}
+
+.catalog__form-filter {
+  grid-area: catalog__form-filter;
+}
+
+.catalog__card-select {
+  height: 54px;
+  grid-area: catalog__card-select;
+  justify-self: end;
+}
+
+.catalog__list {
+  grid-area: catalog__list;
+}
+
+.catalog__pagination {
+  grid-area: catalog__pagination;
+}
