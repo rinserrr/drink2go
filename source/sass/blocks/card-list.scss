@@ -5,8 +5,14 @@
   @include list-reset;
 
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 317px));
+  grid-template-columns: repeat(auto-fit, 317px);
   gap: 30px;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    margin-bottom: 72px;
+    grid-template-columns: repeat(auto-fit, 349px);
+    justify-content: center;
+  }
 }
 
 .card-list__item {
@@ -38,7 +44,7 @@
 }
 
 .card-list__text {
-  margin-bottom: 19px;
+  margin-bottom: 20px;
   font-weight: 400;
   font-size: 14px;
   line-height: 20px;

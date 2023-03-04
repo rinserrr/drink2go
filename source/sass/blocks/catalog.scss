@@ -9,10 +9,8 @@
   display: grid;
 
   @media (min-width: $desktop-width) {
-    // grid-template-columns: 318px 1011px;
     grid-template-columns: 318px 1fr;
     column-gap: 30px;
-    // row-gap: 60px;
     grid-template-areas:
       "catalog__title catalog__title"
       "catalog__description catalog__description"
@@ -20,13 +18,31 @@
       "catalog__form-filter catalog__list"
       "catalog__form-filter catalog__pagination";
   }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    grid-template-areas:
+      "catalog__title catalog__title"
+      "catalog__description catalog__description"
+      "catalog__form-filter catalog__form-filter"
+      "catalog__card-select catalog__card-select"
+      "catalog__list catalog__list"
+      "catalog__pagination catalog__pagination";
+  }
 }
 
 .catalog__title {
   margin: 0 auto;
-  margin-bottom: 4px;
-  padding-top: 102px;
   grid-area: catalog__title;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 101px;
+    margin-bottom: 4px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    padding-top: 81px;
+    margin-bottom: 4px;
+  }
 }
 
 .catalog__description {
@@ -39,6 +55,13 @@
     font-size: 42px;
     line-height: 64px;
   }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    margin-bottom: 22px;
+    font-weight: 700;
+    font-size: 42px;
+    line-height: 64px;
+  }
 }
 
 .catalog__form-filter {
@@ -46,17 +69,31 @@
 }
 
 .catalog__card-select {
-  height: 54px;
   grid-area: catalog__card-select;
-  justify-self: end;
+
+  @media (min-width: $desktop-width) {
+    height: 54px;
+    justify-self: end;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    justify-self: end;
+    margin-bottom: 23px;
+  }
 }
 
 .catalog__list {
   grid-area: catalog__list;
-  margin-bottom: 62px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 62px;
+  }
 }
 
 .catalog__pagination {
   grid-area: catalog__pagination;
-  margin-bottom: 120px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 120px;
+  }
 }

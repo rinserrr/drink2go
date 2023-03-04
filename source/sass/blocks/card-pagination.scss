@@ -4,9 +4,14 @@
 .card-pagination {
   margin-left: auto;
   width: 395px;
+  height: 40px;
   display: grid;
   grid-template-columns: 91px auto 104px;
   column-gap: 20px;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    margin-bottom: 88px;
+  }
 }
 
 .card-pagination .button {
