@@ -1,19 +1,25 @@
 @use "../global/bootstrap.scss" as *;
 
+
 .features {
   padding-top: 50px;
 
   @media (min-width: $tablet-width) {
     padding-top: 60px;
+    margin-bottom: 75px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    margin-bottom: 60px;
   }
 }
 
 .features__title {
   text-align: center;
-
-  @media (min-width: $tablet-width) {
-    padding-top: 0;
-  }
 
   @media (min-width: $desktop-width) {
     padding-top: 40px;
@@ -32,10 +38,6 @@
     font-size: 42px;
     line-height: 64px;
   }
-
-  @media (min-width: $desktop-width) {
-    padding-bottom: 18px;
-  }
 }
 
 .features-list {
@@ -52,7 +54,7 @@
 
   @media (min-width: $desktop-width) {
     padding: 0;
-    padding-bottom: 96px;
+    padding-bottom: 136px;
     display: grid;
     grid-template-columns: 318px 317px 318px 317px;
   }
@@ -87,7 +89,6 @@
     margin-bottom: 0;
     padding-top: 0;
     background-position: 0 0;
-
 
     &--speed {
       grid-column-start: 2;

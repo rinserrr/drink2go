@@ -40,3 +40,51 @@ const swiper = new Swiper('.swiper', {
   //   el: '.swiper-scrollbar',
   // },
 });
+
+
+/* Map */
+
+const resetButton = document.querySelector('#reset');
+
+const map = L.map('map')
+  .on('load', () => {
+    console.log('Карта инициализирована');
+  })
+  .setView({
+    lat: 59.96831,
+    lng: 30.31748,
+  }, 16);
+/*
+   .setView({
+    lat: 59.92749,
+    lng: 30.31127,
+  }, 10);
+  */
+
+L.tileLayer(
+  'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
+  {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors',
+  },
+).addTo(map);
+
+/* Pin */
+const mainPinIcon = L.icon({
+  iconUrl: '../img/map/map-pin.svg',
+  iconSize: [52, 52],
+  iconAnchor: [26, 52],
+});
+
+const marker = L.marker(
+  {
+    lat: 59.96831,
+    lng: 30.31748,
+  },
+  {
+    draggable: true,
+    /* Pin */
+    icon: mainPinIcon,
+  },
+);
+
+marker.addTo(map);

@@ -3,8 +3,26 @@
 
 /* размеры фильтра */
 .form-filter {
-  width: 318px;
-  min-height: 714px;
+  @media (min-width: $desktop-width) {
+    padding-top: 1px;
+    min-height: 714px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    width: 728px;
+    padding-bottom: 22px;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 280px;
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
 }
 
 /* fieldset */
@@ -16,25 +34,64 @@
 
 /* title */
 .form-filter__field-title {
-  padding-bottom: 20px;
+  margin: 0;
+  padding: 0;
+  margin-bottom: 21px;
   font-weight: 600;
   font-size: 16px;
   line-height: 24px;
 }
 
+.form-filter__group--price {
+  margin-bottom: 2px;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    width: 227px;
+    margin-right: 22px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    min-width: 280px;
+    margin-left: -2px;
+  }
+}
+
 
 /* range */
 .form-filter__range {
-  padding-bottom: 20px;
   position: relative;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 8px;
+    margin-bottom: 34px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    padding-top: 8px;
+    margin-bottom: 34px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-top: 10px;
+    margin-bottom: 38px;
+  }
 }
 
 /* серая линия */
 .form-filter__range-line {
+  width: 100%;
   height: 2px;
-  width: 318px;
   position: absolute;
   background-color: $color-alt-light-grey;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    margin-left: 6px;
+    width: 98%;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    min-width: 280px;
+  }
 }
 
 /* пурпурная линиия */
@@ -94,19 +151,19 @@
 }
 
 .form-filter__range-min {
-  top: -12px;
-  left: -0;
+  top: -11px;
+  left: 0;
 }
 
 .form-filter__range-max {
-  top: -12px;
-  right: 24px;
+  top: -11px;
+  right: 20px;
 }
 
 /* input range */
 .form-filter__range-input {
-  width: 134px;
   padding: 7px 10px;
+  height: 40px;
   font-family: $ff-montserrat;
   font-size: 16px;
   font-weight: 500;
@@ -117,6 +174,18 @@
   border-radius: 4px;
   background-color: $color-base-white;
   text-align: center;
+
+  @media (min-width: $desktop-width) {
+    width: 134px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    width: 93px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    width: 118px;
+  }
 
   &:hover {
     color: $color-base-black;
@@ -157,6 +226,64 @@
 }
 
 
+/* разделитель инпутов */
+.form-filter__image {
+  color: $color-base-gray;
+  position: relative;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 20px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    margin-left: 12px;
+    margin-right: 12px;
+    top: 20px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 20px;
+  }
+}
+
+
+.form-filter__range-wrapper {
+  display: flex;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    padding-left: 6px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    margin-bottom: 22px;
+  }
+}
+
+.form-filter__group--milk {
+  @media (min-width: $desktop-width) {
+    margin-bottom: 10px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    width: 210px;
+    margin-right: 37px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-top: 2px;
+    padding-bottom: 5px;
+  }
+}
+
+
 /* radio button */
 .form-filter__list {
   @include list-reset;
@@ -167,7 +294,7 @@
 }
 
 .form-filter__milk {
-  padding-left: 30px;
+  padding-left: 34px;
   position: relative;
   cursor: pointer;
 
@@ -180,7 +307,7 @@
   height: 24px;
   position: absolute;
   content: "";
-  top: 0;
+  top: -3px;
   left: 0;
   border-radius: 50%;
   border: 2px solid $color-base-gray;
@@ -188,13 +315,13 @@
 
 /* заливка кнопки в default checked */
 .form-filter__milk::after {
-  position: absolute;
   width: 16px;
   height: 16px;
+  position: absolute;
+  left: 4px;
+  top: 1px;
   border-radius: 50%;
   background-color: $color-base-purple;
-  left: 4px;
-  top: 4px;
 }
 
 /* заливка не нажатой кнопки при фокусе и ховере */
@@ -255,9 +382,26 @@
 }
 
 
+.form-filter__group--country {
+  margin-bottom: 16px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
+
+  .form-filter__field-title {
+    margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 18px;
+    }
+  }
+}
+
+
 /* checkbox button */
 .form-filter__country {
-  padding-left: 50px;
+  padding-left: 52px;
   position: relative;
   cursor: pointer;
 
@@ -268,7 +412,7 @@
 .form-filter__country::before {
   content: "";
   position: absolute;
-  top: 0;
+  top: -2px;
   left: 0;
   width: 42px;
   height: 24px;
@@ -280,7 +424,7 @@
 .form-filter__country::after {
   content: "";
   position: absolute;
-  top: 2px;
+  top: 0;
   left: 2px;
   width: 20px;
   height: 20px;
@@ -321,18 +465,63 @@
 
 
 /* form button */
+.form-filter__button-wrapper {
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    padding-top: 4px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
 .button--form-apply {
-  width: 160px;
-  min-height: 45px;
-  font-size: 13px;
+  width: 150px;
+  min-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 24px;
+  box-sizing: border-box;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 0;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    margin-left: 180px;
+    margin-right: 20px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    width: 160px;
+    min-height: 45px;
+    margin-bottom: 24px;
+  }
 }
 
 .button--form-reset {
-  width: 160px;
-  min-height: 45px;
-  font-size: 13px;
+  width: 150px;
+  min-height: 40px;
+  font-weight: 400;
+  font-size: 14px;
   line-height: 24px;
+  box-sizing: border-box;
   color: $color-base-purple;
   background-color: $color-base-white;
+
+  &:active {
+    color: var(--color-base-white);
+  }
+
+  @media (max-width: $mobile-width-only) {
+    width: 160px;
+    height: 45px;
+  }
 }

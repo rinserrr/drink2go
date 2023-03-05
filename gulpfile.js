@@ -7,6 +7,7 @@ import postcss from 'gulp-postcss';
 import postUrl from 'postcss-url';
 import autoprefixer from 'autoprefixer';
 import csso from 'postcss-csso';
+import rename from 'gulp-rename';
 import terser from 'gulp-terser';
 import squoosh from 'gulp-libsquoosh';
 import svgo from 'gulp-svgmin';
@@ -29,11 +30,15 @@ export function lintBem () {
     .pipe(bemlinter());
 }
 
+// HTML Validation
+
 export function validateMarkup () {
   return gulp.src('source/*.html')
 		.pipe(htmlValidator.analyzer())
 		.pipe(htmlValidator.reporter({ throwErrors: true }));
 }
+
+// Styles
 
 export function processStyles () {
   return gulp.src('source/sass/*.scss', { sourcemaps: isDevelopment })
@@ -44,9 +49,12 @@ export function processStyles () {
       autoprefixer(),
       csso()
     ]))
+    .pipe(rename('style.min.css'))
     .pipe(gulp.dest('build/css', { sourcemaps: isDevelopment }))
     .pipe(browser.stream());
 }
+
+// Scripts
 
 export function processScripts () {
   return gulp.src('source/js/**/*.js')
@@ -55,11 +63,15 @@ export function processScripts () {
     .pipe(browser.stream());
 }
 
+// Images
+
 export function optimizeImages () {
   return gulp.src('source/img/**/*.{png,jpg}')
     .pipe(gulpIf(!isDevelopment, squoosh()))
     .pipe(gulp.dest('build/img'))
 }
+
+// WebP
 
 export function createWebp () {
   return gulp.src('source/img/**/*.{png,jpg}')
@@ -69,11 +81,15 @@ export function createWebp () {
     .pipe(gulp.dest('build/img'))
 }
 
+// SVG
+
 export function optimizeVector () {
   return gulp.src(['source/img/**/*.svg', '!source/img/icons/**/*.svg'])
     .pipe(svgo())
     .pipe(gulp.dest('build/img'));
 }
+
+// Sprite
 
 export function createStack () {
   return gulp.src('source/img/icons/**/*.svg')
@@ -81,6 +97,8 @@ export function createStack () {
     .pipe(stacksvg())
     .pipe(gulp.dest('build/img/icons'));
 }
+
+// Copy
 
 export function copyAssets () {
   return gulp.src([
@@ -94,6 +112,8 @@ export function copyAssets () {
     .pipe(gulp.dest('build'));
 }
 
+// Server
+
 export function startServer (done) {
   browser.init({
     server: {
@@ -106,10 +126,14 @@ export function startServer (done) {
   done();
 }
 
+// Reload
+
 function reloadServer (done) {
   browser.reload();
   done();
 }
+
+// Watcher
 
 function watchFiles () {
   gulp.watch('source/sass/**/*.scss', gulp.series(processStyles));
