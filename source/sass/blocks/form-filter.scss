@@ -10,10 +10,18 @@
 
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     width: 728px;
-    padding-bottom: 21px;
+    padding-bottom: 22px;
     display: flex;
     flex-wrap: wrap;
     margin: 0 auto;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    margin: 0 auto;
+    padding-bottom: 20px;
+    width: 280px;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -41,26 +49,48 @@
     width: 227px;
     margin-right: 22px;
   }
+
+  @media (max-width: $mobile-width-only) {
+    min-width: 280px;
+    margin-left: -2px;
+  }
 }
 
 
 /* range */
 .form-filter__range {
-  padding-top: 8px;
-  margin-bottom: 34px;
   position: relative;
+
+  @media (min-width: $desktop-width) {
+    padding-top: 8px;
+    margin-bottom: 34px;
+  }
+
+  @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    padding-top: 8px;
+    margin-bottom: 34px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-top: 10px;
+    margin-bottom: 38px;
+  }
 }
 
 /* серая линия */
 .form-filter__range-line {
-  height: 2px;
   width: 100%;
+  height: 2px;
   position: absolute;
   background-color: $color-alt-light-grey;
 
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     margin-left: 6px;
     width: 98%;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    min-width: 280px;
   }
 }
 
@@ -133,7 +163,6 @@
 /* input range */
 .form-filter__range-input {
   padding: 7px 10px;
-
   height: 40px;
   font-family: $ff-montserrat;
   font-size: 16px;
@@ -146,12 +175,16 @@
   background-color: $color-base-white;
   text-align: center;
 
+  @media (min-width: $desktop-width) {
+    width: 134px;
+  }
+
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     width: 93px;
   }
 
-  @media (min-width: $desktop-width) {
-    width: 134px;
+  @media (max-width: $mobile-width-only) {
+    width: 118px;
   }
 
   &:hover {
@@ -198,13 +231,19 @@
   color: $color-base-gray;
   position: relative;
 
+  @media (min-width: $desktop-width) {
+    margin-left: 20px;
+    margin-right: 20px;
+    top: 20px;
+  }
+
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     margin-left: 12px;
     margin-right: 12px;
     top: 20px;
   }
 
-  @media (min-width: $desktop-width) {
+  @media (max-width: $mobile-width-only) {
     margin-left: 20px;
     margin-right: 20px;
     top: 20px;
@@ -213,20 +252,34 @@
 
 
 .form-filter__range-wrapper {
-  margin-bottom: 30px;
   display: flex;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 30px;
+  }
 
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     padding-left: 6px;
   }
+
+  @media (max-width: $mobile-width-only) {
+    margin-bottom: 22px;
+  }
 }
 
 .form-filter__group--milk {
-  margin-bottom: 10px;
+  @media (min-width: $desktop-width) {
+    margin-bottom: 10px;
+  }
 
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     width: 210px;
     margin-right: 37px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    padding-top: 2px;
+    padding-bottom: 5px;
   }
 }
 
@@ -330,10 +383,18 @@
 
 
 .form-filter__group--country {
-  margin-bottom: 20px;
+  margin-bottom: 16px;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 20px;
+  }
 
   .form-filter__field-title {
-    margin-bottom: 19px;
+    margin-bottom: 20px;
+
+    @media (min-width: $tablet-width) {
+      margin-bottom: 18px;
+    }
   }
 }
 
@@ -405,14 +466,19 @@
 
 /* form button */
 .form-filter__button-wrapper {
-  height: 40px;
+  margin: 0 auto;
   display: flex;
   justify-content: space-between;
 
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
+    padding-top: 4px;
     width: 100%;
-    margin: 0 auto;
     justify-content: flex-start;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    flex-direction: column;
+    align-items: center;
   }
 }
 
@@ -424,9 +490,19 @@
   line-height: 24px;
   box-sizing: border-box;
 
+  @media (min-width: $desktop-width) {
+    margin-left: 0;
+  }
+
   @media (min-width: $tablet-width) and (max-width: $desktop-width-only) {
     margin-left: 180px;
     margin-right: 20px;
+  }
+
+  @media (max-width: $mobile-width-only) {
+    width: 160px;
+    min-height: 45px;
+    margin-bottom: 24px;
   }
 }
 
@@ -442,5 +518,10 @@
 
   &:active {
     color: var(--color-base-white);
+  }
+
+  @media (max-width: $mobile-width-only) {
+    width: 160px;
+    height: 45px;
   }
 }
