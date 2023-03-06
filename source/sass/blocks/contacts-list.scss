@@ -1,0 +1,26 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.contacts-list {
+  padding-bottom: 13px;
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 0;
+  }
+}
+
+.contacts-list li {
+  padding-bottom: 4px;
+  text-transform: none;
+  display: flex;
+  gap: 6px;
+  line-height: 20px;
+
+  font: {
+    size: 14px;
+  }
+
+  &:nth-child(2) {
+    gap: 0;
+  }
+}

@@ -1,0 +1,114 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.page-footer {
+  padding: 0;
+
+  @media (min-width: $desktop-width) {
+    display: grid;
+    grid-template-areas:
+      "wrapper nav"
+      "copyright copyright";
+    grid-template-columns: auto 1fr;
+  }
+}
+
+.page-footer__wrapper {
+  padding: 21px 26px 18px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid $color-base-purple-light;
+
+  @media (min-width: $tablet-width) {
+    padding-top: 40px;
+    border: none;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-left: 40px;
+    grid-area: wrapper;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+}
+
+.page-footer__nav {
+  @media (min-width: $desktop-width) {
+    margin-top: 40px;
+    grid-area: nav;
+  }
+}
+
+.page-footer__slogan {
+  display: none;
+
+  @media (min-width: $desktop-width) {
+    display: block;
+    margin: 0;
+    margin-bottom: 58px;
+    color: $color-base-black;
+    line-height: 20px;
+
+    font: {
+      size: 14px;
+      family: $ff-montserrat;
+    }
+  }
+}
+
+.page-footer__copyright {
+  margin: 0 auto;
+  padding: 20px 0 30px;
+  width: 206px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  line-height: 16px;
+  color: $color-base-gray;
+
+  font: {
+    family: $ff-montserrat;
+    size: 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-top: 8px;
+    grid-area: copyright;
+  }
+}
+
+.page-footer__logo {
+  cursor: default;
+
+  @media (min-width: $desktop-width) {
+    margin-bottom: 6px;
+  }
+
+  @include focus-state;
+}
+
+.page-footer__logo-link {
+  display: flex;
+  text-decoration: none;
+
+  &:hover {
+    color: rgba(120, 89, 207, 0.7);
+    fill: rgba(120, 89, 207, 0.7);
+  }
+
+  @include focus-state;
+}
+
+.page-footer__logo-link svg {
+  padding-left: 4px;
+  width: 12px;
+  height: 16px;
+  fill: $color-base-gray;
+}
+
+.page-footer__logo-link:hover svg {
+  fill: $color-base-purple;
+}

@@ -1,0 +1,49 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.social-list {
+  margin-left: 49px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  @media (min-width: $desktop-width) {
+    margin-left: 10px;
+    width: 140px;
+  }
+
+  @include list-reset;
+}
+
+.social-list__icon {
+  width: 22px;
+  height: 22px;
+}
+
+.social-list__link {
+  width: 22px;
+  height: 22px;
+
+  @include focus-state;
+}
+
+.social-list__vk-icon,
+.social-list__ok-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.social-list__printerest-icon {
+  width: 22px;
+  height: 22px;
+}
+
+.social-list__img {
+  fill: $color-base-gray;
+  transition: 0.3s;
+
+  &:hover {
+    fill: rgba(120, 89, 207, 0.7);
+  }
+}

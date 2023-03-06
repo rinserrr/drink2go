@@ -1,0 +1,133 @@
+@use "../global/bootstrap.scss" as *;
+
+
+.footer-nav {
+  @media (min-width: $tablet-width) {
+    margin-top: 10px;
+    display: grid;
+    grid-template-rows: 1fr;
+    grid-template-areas: "store media contacts";
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 50px;
+    margin-left: 38px;
+  }
+}
+
+.footer-nav__item {
+  margin: 0 auto;
+  padding: 0 20px 8px 20px;
+  border-bottom: 1px solid #e0ebff;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+    width: 223px;
+    border: none;
+  }
+
+  &--store {
+    grid-area: store;
+  }
+
+  &--media {
+    grid-area: media;
+  }
+
+  &--contacts {
+    padding-bottom: 4px;
+    grid-area: contacts;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 100%;
+  }
+}
+
+.footer-nav__title {
+  margin: 0;
+  padding: 20px 0;
+  line-height: 20px;
+  color: $color-base-purple;
+
+  font: {
+    family: $ff-montserrat;
+    size: 14px;
+  }
+
+  @media (min-width: $tablet-width) {
+    padding: 0 0 20px;
+  }
+
+  @media (min-width: $desktop-width) {
+    padding-bottom: 17px;
+  }
+}
+
+.footer-nav__list {
+  @include list-reset;
+}
+
+.footer-nav__list-item {
+  padding-bottom: 20px;
+  line-height: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+
+  a {
+    @include focus-state;
+  }
+
+  font: {
+    family: $ff-montserrat;
+    size: 12px;
+  }
+
+  @media (min-width: $tablet-width) {
+    font-size: 14px;
+  }
+
+  &:hover {
+    color: rgba(0, 0, 0, 0.5);
+  }
+}
+
+.footer-nav__list-item--address {
+  @media (min-width: $tablet-width) {
+    display: flex;
+    justify-content: space-between;
+
+    span {
+      padding-bottom: 0;
+      width: 204px;
+      line-height: 20px;
+
+      font: {
+        family: $ff-montserrat;
+        size: 14px;
+      }
+
+      @media (min-width: $tablet-width) {
+        padding-bottom: 15px;
+        width: 100%;
+      }
+    }
+  }
+
+  @media (min-width: $desktop-width) {
+    justify-content: flex-start;
+  }
+}
+
+.footer-nav__pin-icon,
+.footer-nav__phone-icon {
+  width: 20px;
+  height: 20px;
+  fill: $color-base-purple;
+}
+
+.footer-nav__address-text {
+  margin: 0;
+  padding-left: 17px;
+}
