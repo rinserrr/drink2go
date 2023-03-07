@@ -70,7 +70,7 @@ L.tileLayer(
 
 /* Pin */
 const mainPinIcon = L.icon({
-  iconUrl: '../img/map/map-pin.svg',
+  iconUrl: './img/map/map-pin.svg',
   iconSize: [52, 52],
   iconAnchor: [26, 52],
 });
