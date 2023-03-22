@@ -1,3 +1,6 @@
+png
+https://www.favicon-generator.org/
+
 использовать этот генератор
 https://xn--80aawagdaxi7an.xn--p1ai/#gen
 
