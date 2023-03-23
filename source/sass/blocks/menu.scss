@@ -124,6 +124,7 @@
 
   @include link-state;
   @include focus-state;
+  @include noselect;
 }
 
 .site-navigation__link--current {
@@ -197,6 +198,7 @@
 
   @include link-state;
   @include focus-state;
+  @include noselect;
 }
 
 .user-navigation__text {

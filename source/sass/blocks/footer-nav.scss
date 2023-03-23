@@ -91,6 +91,8 @@
   &:hover {
     color: rgba(0, 0, 0, 0.5);
   }
+
+  @include noselect;
 }
 
 .footer-nav__list-item--address {

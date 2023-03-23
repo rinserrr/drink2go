@@ -83,6 +83,8 @@
   text-decoration: none;
   text-transform: lowercase;
   position: relative;
+
+  @include noselect;
 }
 
 /* реализация стрелки */
@@ -144,6 +146,7 @@
   }
 
   @include focus-state;
+  @include noselect;
 }
 
 /* текущий select */

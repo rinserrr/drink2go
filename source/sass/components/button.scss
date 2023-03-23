@@ -52,4 +52,6 @@
     outline-offset: -2px;
     z-index: 50;
   }
+
+  @include noselect;
 }
