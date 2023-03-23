@@ -48,6 +48,7 @@ max-width — от указанного значения и ниже, включ
 
   @include link-state;
   @include focus-state;
+  @include noselect;
 }
 
 .header__image {
@@ -63,6 +64,8 @@ max-width — от указанного значения и ниже, включ
     width: 170px;
     height: 36px;
   }
+
+  @include noselect;
 }
 
 .header__title {

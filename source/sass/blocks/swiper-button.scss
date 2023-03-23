@@ -72,6 +72,7 @@
   }
 
   @include focus-state;
+  @include noselect;
 }
 
 .swiper-prev-svg {
@@ -88,6 +89,8 @@
   @media (min-width: $desktop-width) {
     top: 0;
   }
+
+  @include noselect;
 }
 
 /* правая кнопка */
@@ -142,6 +145,7 @@
   }
 
   @include focus-state;
+  @include noselect;
 }
 
 .swiper-next-svg {
@@ -158,4 +162,6 @@
   @media (min-width: $desktop-width) {
     top: 0;
   }
+
+  @include noselect;
 }
