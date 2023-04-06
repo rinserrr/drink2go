@@ -25,9 +25,18 @@
   @include focus-state;
 }
 
-@media (max-width: $mobile-width-only) {
+@media (max-width: $tablet-width) {
   .menu--closed .header__site-navigation {
     display: none;
+  }
+
+  .menu--opened .header__site-navigation {
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    z-index: 10;
+    background-color: $color-base-white;
   }
 }
 
@@ -101,7 +110,7 @@
   color: $color-base-black;
   position: relative;
 
-  @media (max-width: $mobile-width-only) {
+  @media (max-width: $tablet-width) {
     /* Нижнее подчеркивание меню на mobile */
     &::after {
       width: 100%;
