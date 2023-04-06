@@ -6,11 +6,11 @@
   width: 60px;
   height: 60px;
   display: inline-flex;
-  order: 1;
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
   position: relative;
+  order: 1;
   background-color: $color-base-white;
   border: none;
   text-align: center;
@@ -182,7 +182,7 @@
 }
 
 .user-navigation__item:last-child {
-  @media (min-width: $desktop-width-only) {
+  @media (min-width: $desktop-width) {
     margin-left: 11px;
   }
 }
@@ -201,7 +201,7 @@
     min-height: 80px;
   }
 
-  @media (min-width: $desktop-width-only) {
+  @media (min-width: $desktop-width) {
     width: 129px;
   }
 
@@ -219,7 +219,7 @@
   letter-spacing: 0.02em;
   text-transform: uppercase;
 
-  @media (min-width: $desktop-width-only) {
+  @media (min-width: $desktop-width) {
     display: block;
   }
 }
