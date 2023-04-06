@@ -5,10 +5,10 @@
 min-width — от указанного значения и выше, включая значение.
 max-width — от указанного значения и ниже, включая значение.
 */
+
 .header .container {
-  @media (max-width: $mobile-width-only) {
-    padding: 0;
-  }
+  padding: 0;
+  min-width: 320px;
 }
 
 .header__wrapper {
@@ -17,33 +17,30 @@ max-width — от указанного значения и ниже, включ
 
 .header__logo-link {
   margin-left: 20px;
+  padding-top: 12px;
   min-height: 60px;
   display: flex;
   position: absolute;
-  padding-top: 12px;
   text-decoration: none;
   color: $color-base-black;
   box-sizing: border-box;
 
   @media (min-width: $tablet-width) {
-    margin-left: 0;
-    padding-top: 22px;
-    position: static;
     margin-right: 54px;
+    padding-top: 22px;
     height: 80px;
     width: 120px;
+    position: static;
   }
 
   @media (min-width: $desktop-width) {
+    margin-left: 0;
+    margin-right: 142px;
     padding-top: 0;
+    width: 316px;
     height: 80px;
     justify-content: space-between;
     align-items: center;
-  }
-
-  @media (min-width: $desktop-width-only) {
-    width: 316px;
-    margin-right: 142px;
   }
 
   @include link-state;
@@ -75,20 +72,20 @@ max-width — от указанного значения и ниже, включ
   font-size: 12px;
   line-height: 16px;
 
-  @media (min-width: $desktop-width-only) {
+  @media (min-width: $desktop-width) {
     margin-left: 20px;
-    display: block;
     width: 126px;
     height: 33px;
+    display: block;
   }
 }
 
 .header__menu {
   width: 100%;
+  min-height: 60px;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-end;
-  min-height: 60px;
 
   @media (min-width: $tablet-width) {
     min-height: 80px;
@@ -101,8 +98,8 @@ max-width — от указанного значения и ниже, включ
   order: 2;
 
   @media (min-width: $tablet-width) {
-    order: 0;
     width: 399px;
+    order: 0;
   }
 
   @media (min-width: $desktop-width) {
